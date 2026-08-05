@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090a0f" />
+  <meta name="description" content="Baza wiedzy i test dla pracownika oświetlenia scenicznego: 10 modułów, 40 pytań, 50 minut." />
+  <title>StageLight Pro — baza wiedzy i test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient--amber"></div>
+  <div class="ambient ambient--violet"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" data-view-link="home" aria-label="StageLight Pro — strona główna">
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h12l2 5-3.1 3.1L14 7.2V22h-4V7.2l-2.9 2.9L4 7l2-5Zm1.4 2-.8 2 1.2 1.2L10 5v-1H7.4Zm6.6 0v1l2.2 2.2L17.4 6l-.8-2H14Z"/></svg></span>
+      <span>STAGE<span>LIGHT</span><small>PRO</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Główna nawigacja">
+      <button type="button" data-view-link="home" class="is-active">Start</button>
+      <button type="button" data-view-link="knowledge">Baza wiedzy</button>
+      <button type="button" data-view-link="exam">Test</button>
+    </nav>
+    <button id="mobile-menu" class="mobile-menu" type="button" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section id="home-view" class="view home-view">
+      <div class="hero">
+        <div class="hero__copy">
+          <div class="eyebrow"><i></i> Technika sceniczna • poziom praktyczny</div>
+          <h1>Światło pod kontrolą.<br /><span>Od zasilania do show.</span></h1>
+          <p>Praktyczna baza wiedzy dla pracownika oświetlenia scenicznego: sprzęt, DMX, sieci, patch, programowanie, rigging, bezpieczeństwo i diagnostyka.</p>
+          <div class="hero__actions">
+            <button class="primary-button" type="button" data-view-link="knowledge">Rozpocznij naukę <span>→</span></button>
+            <button class="secondary-button" type="button" data-view-link="exam">Uruchom test</button>
+          </div>
+          <div class="hero__meta">
+            <span><strong>10</strong> modułów</span>
+            <span><strong>40</strong> pytań</span>
+            <span><strong>50:00</strong> minut</span>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="truss"></div>
+          <div class="fixture fixture--one"><i></i></div>
+          <div class="fixture fixture--two"><i></i></div>
+          <div class="fixture fixture--three"><i></i></div>
+          <div class="beam beam--one"></div>
+          <div class="beam beam--two"></div>
+          <div class="beam beam--three"></div>
+          <div class="stage-floor"></div>
+          <span class="signal signal--one">DMX</span>
+          <span class="signal signal--two">RDM</span>
+          <span class="signal signal--three">sACN</span>
+        </div>
+      </div>
+
+      <div class="home-cards">
+        <article><span>01</span><h2>Ucz się modułami</h2><p>Krótkie sekcje, najważniejsze definicje, procedury i praktyczne checklisty.</p></article>
+        <article><span>02</span><h2>Licz obciążenie</h2><p>Podręczny kalkulator prądu dla obwodu jednofazowego pomaga ćwiczyć planowanie zasilania.</p></article>
+        <article><span>03</span><h2>Sprawdź wiedzę</h2><p>Symulacja 40 pytań z pełną nawigacją, zapisem postępu i omówieniem odpowiedzi.</p></article>
+      </div>
+
+      <div class="safety-banner">
+        <span aria-hidden="true">!</span>
+        <p><strong>Bezpieczeństwo jest ważniejsze niż show.</strong> Materiał ma charakter szkoleniowy. Prace elektryczne, na wysokości i podwieszanie urządzeń wykonuj wyłącznie w granicach swoich kwalifikacji, zgodnie z dokumentacją, oceną ryzyka i procedurami obiektu.</p>
+      </div>
+    </section>
+
+    <section id="knowledge-view" class="view knowledge-view is-hidden" aria-labelledby="knowledge-title">
+      <div class="section-heading">
+        <div><span>BAZA WIEDZY</span><h1 id="knowledge-title">Technika światła scenicznego</h1><p>Wybierz moduł lub wyszukaj pojęcie. Oznaczaj ukończone rozdziały — postęp zapisuje się w przeglądarce.</p></div>
+        <div class="knowledge-progress"><strong id="learned-count">0/10</strong><span>ukończonych</span><div><i id="learned-bar"></i></div></div>
+      </div>
+
+      <div class="knowledge-tools">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 19.6-5.1-5.1a7.5 7.5 0 1 0-1.4 1.4l5.1 5.1 1.4-1.4ZM4 10.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z"/></svg>
+          <input id="knowledge-search" type="search" placeholder="Szukaj: DMX, lux, terminator, cue..." />
+        </label>
+        <button id="expand-all" class="tool-button" type="button">Rozwiń wszystko</button>
+      </div>
+
+      <div class="knowledge-layout">
+        <aside class="module-nav"><h2>Moduły</h2><div id="module-nav-list"></div></aside>
+        <div class="knowledge-content">
+          <div id="no-search-results" class="empty-state is-hidden">Nie znaleziono pasującego tematu.</div>
+          <div id="module-list" class="module-list"></div>
+
+          <section class="calculator-card" id="calculator">
+            <div><span class="module-number">NARZĘDZIE</span><h2>Kalkulator obciążenia 1-fazowego</h2><p>Ćwiczeniowe przybliżenie: <strong>I = P / U</strong>. Do planowania rzeczywistego systemu uwzględnij dokumentację urządzeń, charakter obciążenia, prąd rozruchowy, zabezpieczenia i decyzję osoby uprawnionej.</p></div>
+            <div class="calculator-form">
+              <label>Moc łączna <span><input id="power-input" type="number" min="0" value="2000" /> W</span></label>
+              <label>Napięcie <span><input id="voltage-input" type="number" min="1" value="230" /> V</span></label>
+              <output id="current-output"><strong>8,70 A</strong><small>prąd obliczeniowy</small></output>
+            </div>
+          </section>
+
+          <section class="source-card">
+            <span class="module-number">ŹRÓDŁA I DALSZA NAUKA</span>
+            <h2>Dokumentacja branżowa</h2>
+            <div class="source-grid">
+              <a href="https://tsp.esta.org/tsp/documents/published_docs.php" target="_blank" rel="noreferrer"><strong>ESTA TSP</strong><span>Standardy DMX512-A, RDM, sACN, rigging i konstrukcje tymczasowe.</span></a>
+              <a href="https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/prace-szczegolnie-niebezpieczne-oraz-prace-wymagajace-szczegolnej-sprawnosci-psychofizycznej?tmpl=print" target="_blank" rel="noreferrer"><strong>Państwowa Inspekcja Pracy</strong><span>Prace szczególnie niebezpieczne i wymagania organizacyjne.</span></a>
+              <a href="https://help2.malighting.com/grandMA3/2.4/HTML/patch_dmx_sheet.html" target="_blank" rel="noreferrer"><strong>MA Lighting</strong><span>Przykład dokumentacji patchu, adresów i bieżącego wyjścia DMX.</span></a>
+              <a href="https://www.plasa.org/nrag/" target="_blank" rel="noreferrer"><strong>PLASA / NRAG</strong><span>Dobre praktyki, szkolenia i dokumenty dotyczące riggingu eventowego.</span></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam-view" class="view exam-view is-hidden" aria-labelledby="exam-title">
+      <div id="exam-intro" class="exam-intro">
+        <span class="eyebrow"><i></i> Symulacja sprawdzianu</span>
+        <h1 id="exam-title">Test pracownika<br /><span>oświetlenia scenicznego</span></h1>
+        <p>40 pytań jednokrotnego wyboru. Możesz pomijać pytania i wracać do nich w dowolnej kolejności.</p>
+        <div class="exam-parameters"><span><strong>40</strong> pytań</span><span><strong>50:00</strong> minut</span><span><strong>70%</strong> próg treningowy</span></div>
+        <button id="start-exam" class="primary-button" type="button">Rozpocznij test <span>→</span></button>
+        <button id="resume-exam" class="text-button is-hidden" type="button">Wznów zapisany test</button>
+      </div>
+
+      <div id="exam-shell" class="exam-shell is-hidden">
+        <aside class="exam-sidebar">
+          <div class="exam-progress"><span>POSTĘP</span><strong id="answered-count">0 / 40</strong><div><i id="answer-progress"></i></div></div>
+          <div id="question-grid" class="question-grid"></div>
+          <div class="legend"><span><i class="current"></i>Aktualne</span><span><i class="answered"></i>Odpowiedziane</span><span><i></i>Puste</span></div>
+        </aside>
+        <div class="exam-main">
+          <div class="exam-status"><span id="mobile-status">Pytanie 1 z 40</span><div id="exam-timer" class="timer"><small>POZOSTAŁY CZAS</small><strong id="timer-value">50:00</strong></div></div>
+          <article class="question-card">
+            <div class="question-top"><span id="question-position">PYTANIE 1 Z 40</span><span id="question-category">BHP</span></div>
+            <h2 id="question-text"></h2>
+            <div id="answer-list" class="answer-list" role="radiogroup" aria-labelledby="question-text"></div>
+            <button id="clear-answer" class="text-button" type="button">Wyczyść odpowiedź</button>
+          </article>
+          <div class="exam-actions">
+            <button id="prev-question" class="secondary-button" type="button">← Poprzednie</button>
+            <button id="finish-exam" class="text-button danger" type="button">Zakończ test</button>
+            <button id="next-question" class="primary-button compact" type="button">Następne →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result-view" class="view result-view is-hidden" aria-labelledby="result-title">
+      <div class="result-card">
+        <div id="result-symbol" class="result-symbol">✓</div><span>TEST ZAKOŃCZONY</span>
+        <h1 id="result-title">Dobra robota!</h1><p id="result-copy"></p>
+        <div id="score-ring" class="score-ring"><div><strong id="score-value">0%</strong><small>WYNIK</small></div></div>
+        <div class="result-stats"><span><strong id="correct-value">0</strong>poprawnych</span><span><strong id="wrong-value">0</strong>błędnych</span><span><strong id="blank-value">0</strong>pustych</span></div>
+        <div class="result-actions"><button id="review-results" class="secondary-button" type="button">Przejrzyj odpowiedzi</button><button id="restart-exam" class="primary-button compact" type="button">Rozwiąż ponownie</button></div>
+        <div id="review-list" class="review-list is-hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="finish-dialog" class="dialog is-hidden" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <div class="dialog__backdrop"></div><div class="dialog__card"><span>?</span><h2 id="dialog-title">Zakończyć test?</h2><p id="dialog-copy"></p><div><button id="cancel-finish" class="secondary-button" type="button">Wróć</button><button id="confirm-finish" class="primary-button compact" type="button">Zakończ i sprawdź</button></div></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
